@@ -44,12 +44,12 @@ html::-webkit-scrollbar-thumb:hover {
 body {
     background: #111;
     overflow-x: hidden;
-    padding-left: 35rem;
+    padding-left: 0rem;
 }
 
 section {
     min-height: 100vh;
-    padding: 1rem;
+    padding: 0rem;
 }
 /* button */
 .btn {
@@ -85,78 +85,106 @@ section {
 
 
 
+
+ 
+
 header{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
     height: 100%;
-    width: 35rem;
+    overflow: auto;
     background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    text-align: center;
-  
+    /* flex-flow: column; */
+    /* align-items: center; */
 }
 
-header .user img{
-    height: 17rem;
-    width: 17rem;
+header .user img {
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
-    border: .7rem solid var(--yellow)
-
+    margin-bottom: 16px;
+    border: 2px solid var(--yellow);
+   margin-left: 100px;
+   margin-top: 10px;
+   
 }
 
 header .user .name{
-    font-size: 3.5rem;
+    font-size: 22px;
     color: #fff;
+    margin-left: 100px;
 }
-
 header .user .post{
-    font-size: 2rem;
+    font-size: 14px;
     color: #eee;
+    margin-left: 100px;
 }
 
 header .navbar{
-    width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background: #1a1a1a;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 
 header .navbar ul{
     list-style: none;
-    padding: 1rem 3rem;
-}
-header .navbar ul li a {
-    display: block;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    background: #333;
-    color: #fff;
-    font-size: 2rem;
-    border-radius: 80px;
+    padding: 5px 25px;
+    overflow: auto;
 }
 
+header .navbar ul li a {
+    display: block;
+  margin: 3px;
+  padding: 10px;
+  text-decoration: none;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50px;
+    text-align: center;
+    overflow: auto;
+}
 header .navbar ul li a:hover {
     background: var(--yellow);
 }
-
-#menu {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: #333;
-    color: #fff;
-    cursor: pointer;
-    font-size: 2.5rem;
-    padding: 1rem 1.5rem;
-    z-index: 1000;
-    display: none;
-}
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+    
+  }
 
 
+  @media screen and (max-width: 700px) {
+    header {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    header .navbar{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    header .navbar ul li a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    header .navbar ul li a {
+      text-align: center;
+      float: none;
+    }
+  }
 
 
 
@@ -166,7 +194,7 @@ header .navbar ul li a:hover {
     display: flex;
     justify-content: center;
     flex-flow: column;
-    padding: 0 15rem;
+    padding: 0 20px;
 }
 .home h3{
     font-size: 2.5rem;
@@ -198,7 +226,7 @@ color:var(--yellow)
 }
 .about .row .info {
 flex: 1 1 48rem;
-padding: 2rem 1rem;
+padding: 30px 20px;
 padding-left: 6rem;
 }
 
@@ -395,63 +423,3 @@ padding-bottom: 2rem;
 
 
 
-
-
- /* media queries */
-@media (max-width:1200px) {
-    html {
-        font-size: 55%;
-    }
-
-    .home{
-     padding: 1rem 4rem;
-    }
-}
-
-@media (max-width:991px) {
-   header {
-       left: -120%;
-   }
-   #menu{
-       display: block;
-   }
-
-   header.toggle{
-    left: 0%;
-   }
-
-   body{
-       padding: 0;
-   }
-}
-
-@media (max-width:768px) {
-   html {
-       font-size: 50%;
-   }
- }
- 
-
-
-@media (max-width:400px) {
-   header {
-    width: 100vh;
-   }
-   .heading{
-       margin: 0 3rem;
-   }
-   .about .row .counter .box{
-        width: 100%;
-   }
-  
-   .education .box-container .box{
-       width: 100%;
-   }
-   .portfolio .box-container .box{
-       width: 100%;
-   }
-   .contact .row form{
-       margin: 3rem 0;
-   }
-
-}
